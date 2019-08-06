@@ -1,5 +1,4 @@
 ## Jaxi Tank interview test
----
 Jaxi Tank interview project, to apply fullstack developer job.
 
 # Get started

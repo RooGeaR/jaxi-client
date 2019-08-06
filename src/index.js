@@ -1,27 +1,47 @@
 import React from 'react';
-import {render} from 'react-dom';
-import { Provider } from 'react-redux';
-import { Route } from 'react-router-dom';
-import configureStore, { history } from './store/configureStore';
-import { ConnectedRouter } from 'connected-react-router/immutable';
+import ReactDOM from 'react-dom';
+import App from './App';
+import { BrowserRouter as Router } from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
-import 'normalize.css/normalize.css';
+import ApolloClient, { gql } from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
 import './main.css';
 
-import main from './pages/main';
+const token = 'your-personal-access-token';
 
-const store = configureStore();
+const client = new ApolloClient({
+    uri: "http://localhost:8088/graphql",
+    request: operation => {
+        operation.setContext({
+            headers: {
+                authorization: `Bearer ${token}`
+            }
+        });
+    }
+});
 
-render(
-    <Provider store={store}>
-      <ConnectedRouter history={history}>
-          <Route path="/" component={main.Container} />
-      </ConnectedRouter>
-    </Provider>
-  , document.getElementById('root')
-);
+    client
+    .query({
+        query: gql` 
+        {
+            user(id:1){
+                first_name
+                last_name
+            }
+        }
+        `
+    })
+    .then(res => console.log(res));
+
+ReactDOM.render(
+    <ApolloProvider client={client}>
+        <Router>
+            <App />
+        </Router>
+    </ApolloProvider>, 
+    document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
+// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
