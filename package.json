@@ -5,30 +5,18 @@
   "devDependencies": {
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.10.0",
-    "react-scripts": "2.1.8",
-    "redux-mock-store": "^1.5.3"
+    "react-scripts": "2.1.8"
   },
   "dependencies": {
-    "axios": "0.19.0",
-    "connected-react-router": "^6.3.1",
-    "final-form": "latest",
-    "history": "^4.7.2",
-    "immutable": "^4.0.0-rc.12",
-    "is-js": "0.1.1",
-    "normalize.css": "^8.0.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-final-form": "latest",
-    "react-redux": "^6.0.0",
-    "react-router-dom": "^4.3.1",
-    "redux": "^4.0.1",
-    "redux-immutable": "^4.0.0",
-    "redux-thunk": "^2.3.0",
-    "reselect": "^4.0.0",
     "apollo-boost": "^0.3.1",
+    "final-form": "latest",
     "graphql": "^14.2.1",
     "moment": "^2.24.0",
+    "react": "^16.8.6",
     "react-apollo": "^2.5.4",
+    "react-dom": "^16.8.6",
+    "react-final-form": "latest",
+    "react-router-dom": "^4.3.1",
     "styled-components": "^4.2.0"
   },
   "scripts": {
