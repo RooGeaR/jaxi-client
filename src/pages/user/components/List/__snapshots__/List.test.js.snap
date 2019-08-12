@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List user should render correctly 1`] = `
+<ContextProvider
+  value={
+    Array [
+      Object {
+        "callRefetch": false,
+      },
+      [Function],
+    ]
+  }
+>
+  <List />
+</ContextProvider>
+`;

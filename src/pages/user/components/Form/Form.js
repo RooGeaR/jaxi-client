@@ -62,7 +62,7 @@ const UserForm = ({ title, buttonText, onSubmit, initialValues }) => (
             />
           </div>
           <div className="buttons">
-            <button type="submit" disabled={ submitting || pristine }>
+            <button type="submit" disabled={ submitting || pristine } id='submit-button'>
               { buttonText }
             </button>
             <button
@@ -73,7 +73,6 @@ const UserForm = ({ title, buttonText, onSubmit, initialValues }) => (
               Reset
             </button>
           </div>
-          <pre>{JSON.stringify(values, 0, 2)}</pre>
         </form>
       )}
     />

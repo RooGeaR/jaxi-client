@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Query } from 'react-apollo';
 import { userListQuery } from '../../../../queries';
+import { useGlobalState } from '../../../../hooks/state';
 import DeleteButton from '../DeleteButton';
 import styled from 'styled-components';
 
@@ -19,12 +20,22 @@ const Table = styled.table`
 
 const List = () => {
 
+    const [ state, dispatch ] = useGlobalState();
+
     return (
         <Query query={ userListQuery } >
           {({ data, loading, error, fetchMore, refetch }) => {
             if (loading) return <p>loading...</p>;
             if (error) return <p>{error.message}</p>
-            console.log('datalist',data);
+            
+            if (state.callRefetch) {
+              refetch();
+              dispatch({
+                  type: 'SET_CALL_REFETCH',
+                  callRefetch: false
+              });
+            }
+            
             return (
               <>
               <div className='row'>

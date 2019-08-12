@@ -46,7 +46,7 @@ const ProjectForm = ({ title, buttonText, onSubmit, initialValues }) => (
             </Field>
           </div>
           <div className="buttons">
-            <button type="submit" disabled={ submitting || pristine }>
+            <button type="submit" disabled={ submitting || pristine } id='submit-button'>
               { buttonText }
             </button>
             <button
