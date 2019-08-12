@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render correctly 1`] = `
+<StateProvider
+  initialState={
+    Object {
+      "callRefetch": false,
+    }
+  }
+  reducer={[Function]}
+>
+  <div
+    className="App"
+  >
+    <BrowserRouter>
+      <Switch>
+        <Route
+          exact={true}
+          path="/"
+          render={[Function]}
+        />
+        <Route
+          exact={true}
+          path="/user/create"
+          render={[Function]}
+        />
+        <Route
+          exact={true}
+          path="/user/update/:userId"
+          render={[Function]}
+        />
+        <Route
+          exact={true}
+          path="/user"
+          render={[Function]}
+        />
+        <Route
+          exact={true}
+          path="/user/:userId"
+          render={[Function]}
+        />
+        <Route
+          exact={true}
+          path="/project"
+          render={[Function]}
+        />
+        <Route
+          exact={true}
+          path="/project/create"
+          render={[Function]}
+        />
+        <Route
+          exact={true}
+          path="/project/update/:projectId"
+          render={[Function]}
+        />
+        <Route
+          exact={true}
+          path="/project/:projectId"
+          render={[Function]}
+        />
+        <Route
+          component={[Function]}
+        />
+      </Switch>
+    </BrowserRouter>
+  </div>
+</StateProvider>
+`;

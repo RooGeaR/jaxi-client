@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Create project form should render correctly 1`] = `
+<styled.div>
+  <h1>
+    Create project
+  </h1>
+  <ReactFinalForm
+    onSubmit={[MockFunction]}
+    render={[Function]}
+  />
+</styled.div>
+`;
+
+exports[`Update project form should render correctly 1`] = `
+<styled.div>
+  <h1>
+    Update project
+  </h1>
+  <ReactFinalForm
+    onSubmit={[MockFunction]}
+    render={[Function]}
+  />
+</styled.div>
+`;

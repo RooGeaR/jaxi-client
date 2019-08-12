@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { BrowserRouter as Router } from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
-import ApolloClient, { gql } from 'apollo-boost';
+import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import './main.css';
 
@@ -20,24 +19,9 @@ const client = new ApolloClient({
     }
 });
 
-    client
-    .query({
-        query: gql` 
-        {
-            user(id:1){
-                first_name
-                last_name
-            }
-        }
-        `
-    })
-    .then(res => console.log(res));
-
 ReactDOM.render(
     <ApolloProvider client={client}>
-        <Router>
-            <App />
-        </Router>
+        <App />
     </ApolloProvider>, 
     document.getElementById('root'));
 

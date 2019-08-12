@@ -1,10 +1,13 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import { Mutation } from 'react-apollo';
+import { useGlobalState } from '../../../../hooks/state';
 import Form from "../Form";
 import moment from 'moment';
 
 const MutationForm = ({ action, isNewRecord, userId, initialValues, history }) => {
+
+  const [ state, dispatch ] = useGlobalState();
 
   return (
     <Mutation mutation={action}>
@@ -38,6 +41,12 @@ const MutationForm = ({ action, isNewRecord, userId, initialValues, history }) =
                   user: user
                 }
             }).then(res => {
+                if (isNewRecord) {
+                  dispatch({
+                    type: 'SET_CALL_REFETCH',
+                    callRefetch: true
+                  });
+                }
                 return history.push(`/user`)
             });
         };
