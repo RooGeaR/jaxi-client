@@ -17,7 +17,7 @@
     "react-apollo": "^2.5.4",
     "react-dom": "^16.8.6",
     "react-final-form": "latest",
-    "react-router-dom": "^4.3.1",
+    "react-router-dom": "^7.5.2",
     "styled-components": "^4.2.0"
   },
   "scripts": {
